@@ -23,10 +23,11 @@ app.post("/", function (req, res) {
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
       const icon = weatherData.weather[0].icon
-      //const imageURL = "https://openweathermap.org/ig/wn/" + icon + "@2x.png "
+      const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png "
       res.write("<p>The weather is currently " + weatherDescription + " </p>")
       res.write("<h1> The temperature in " + query + "  is " + temp + " degree celcius </h1>")
-      //res.write("<img src=" + imageURL + ">");
+      res.write("<img src=" + imageURL + ">");
+      console.log(weatherData.weather);
       res.send()
 
     })
